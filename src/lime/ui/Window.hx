@@ -689,15 +689,12 @@ class Window
 		__visible = __backend.setVisible(value);
 		return __visible;
 	}
+@:noCompletion private function set_vsync(value:Bool):Bool {
+    return value; // does nothing, but won’t crash
+    }
 
-	@:noCompletion private inline function get_vsync():Bool
-	{
-		return __vsync;
-	}
-
-	@:noCompletion private function set_vsync(value:Bool):Bool
-	{
-		return __vsync = __backend.setVSync(value);
+    @:noCompletion private inline function get_vsync():Bool {
+    return false; // always reports off
 	}
 
 	@:noCompletion private inline function get_width():Int
